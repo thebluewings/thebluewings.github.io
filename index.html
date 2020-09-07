@@ -24,13 +24,13 @@
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/CardSein.loader.js";
+      var loaderUrl = buildUrl + "/my_game.loader.js";
       var config = {
-        dataUrl: buildUrl + "/CardSein.data",
-        frameworkUrl: buildUrl + "/CardSein.framework.js",
-        codeUrl: buildUrl + "/CardSein.wasm",
+        dataUrl: buildUrl + "/my_game.data.br",
+        frameworkUrl: buildUrl + "/my_game.framework.js.br",
+        codeUrl: buildUrl + "/my_game.wasm.br",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
+        companyName: "MyGame",
         productName: "人生卡牌",
         productVersion: "1.0",
       };
@@ -45,8 +45,8 @@
         container.className = "unity-mobile";
         config.devicePixelRatio = 1;
       } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = "1280px";
+        canvas.style.height = "720px";
       }
       loadingBar.style.display = "block";
 
