@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>輸入手機號碼</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+    <body>
+        <center>
+            <p>請輸入你的手機號碼</p>
+            <form action="https://notify-bot.line.me/oauth/authorize">
+                <input type="text" name="response_type" value="code" hidden/>
+                <input type="text" name="client_id" value="nQTAPEeeT6MPcZA15ghfV3" hidden/>
+                <input type="text" name="redirect_uri" value="https://script.google.com/macros/s/AKfycby9dg6z_s0R3h0s-Mdm1gwJjGMy_HHigmOvu6WFvA1wKJwyEJCCYFQ18flPBP4_ANsj/exec" hidden/>
+                <input type="text" name="scope" value="notify" hidden/>
+                <input type="text" name="state" value="simpleat" hidden/>
+                <input type="text" name="response_mode" value="form_post"hidden/>
+                <input type="text" name="cellphone"/>
+                <input type="submit" value="進行綁定"/>
+            </form>
+        </center>
+    </body>
+</html>
