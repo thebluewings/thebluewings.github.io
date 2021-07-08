@@ -10,13 +10,42 @@
             <form action="https://notify-bot.line.me/oauth/authorize">
                 <input type="text" name="response_type" value="code" hidden/>
                 <input type="text" name="client_id" value="nQTAPEeeT6MPcZA15ghfV3" hidden/>
-                <input type="text" name="redirect_uri" value="https://script.google.com/macros/s/AKfycbycZt-lLXl1DHrhW43goXhtY_q3rcg7C9JxLNQdvHEJiEiGbJodRa17mmmRdNf4qlJS/exec" hidden/>
+                <input type="text" name="redirect_uri" value="https://script.google.com/macros/s/AKfycbzdYblEGSFew9yw7w_vKOnzWuMwucDcePF45VhMOpDKJhMrOApW8M-xRh7FU4Ivclf0/exec" hidden/>
                 <input type="text" name="scope" value="notify" hidden/>
-                <input type="text" name="state" value="simpleat" hidden/>
+                <input type="text" name="state" id="state" hidden/>
                 <input type="text" name="response_mode" value="form_post"hidden/>
-                <input type="text" name="cellphone"/>
-                <input type="submit" value="進行綁定"/>
+                <input type="text" id="cellphone" name="cellphone"/>
+                <input type="button" id="get_state" value="取得state" onclick="getState()"/>
+                <input type="submit" id="bind" value="進行綁定" hidden/>
             </form>
         </center>
     </body>
+    <script>
+        function getState() {
+            var cellphone = document.getElementById("cellphone").value
+            if (cellphone == "") return
+            var url = "https://script.google.com/macros/s/AKfycbzdYblEGSFew9yw7w_vKOnzWuMwucDcePF45VhMOpDKJhMrOApW8M-xRh7FU4Ivclf0/exec?type=state"
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", url + "&cellphone=" + cellphone, false); // false for synchronous request
+            xmlHttp.send( null );
+            document.getElementById("state").value = xmlHttp.responseText;
+            document.getElementById("bind").hidden = false
+            document.getElementById("get_state").hidden = true
+        }
+        function requestLINEAuthorize() {
+            var state = getState()
+            var url = "https://notify-bot.line.me/oauth/authorize"
+            var form = new FormData()
+            form.append("response_type", "code")
+            form.append("client_id", "nQTAPEeeT6MPcZA15ghfV3")
+            form.append("redirect_uri", "https://script.google.com/macros/s/AKfycbwFE90jtjm_KI5Frx1NaVUvrtUs25QZTAG58G24z_Tto0DukNKeqk8oIdF6UbjIwJpF/exec")
+            form.append("scope", "notify")
+            form.append("state", state)
+            form.append("response_mode", "form_post")
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "POST", url, false); // false for synchronous request
+            xmlHttp.send( form );
+            xmlHttp.responseText
+        }
+    </script>
 </html>

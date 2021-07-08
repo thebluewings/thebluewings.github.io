@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>LINE Notify綁定測試</title>
+        <title>LINE Notify發送測試</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     </head>
     <body>
         <center>
-            <h1>綁定結束</h1>
+            <h3>輸入你的手機號碼及訊息來測試發送</h3>
+            <table>
+                <tr>
+                    <td><label>手機號碼：</label></td>
+                    <td><input type="text" id="cellphone"/></td>
+                </tr>
+                <tr>
+                    <td><top><label>訊息內容：</label></top></td>
+                    <td><textarea id="message" style="height: 100px;"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button onclick="sendMessage()">發送</button></td>
+                </tr>
+            </table>
         </center>
     </body>
+
+    <script>
+        function sendMessage() {
+            var cellphone = document.getElementById("cellphone").value;
+            var message = document.getElementById("message").value;
+            var url = "https://script.google.com/macros/s/AKfycbzdYblEGSFew9yw7w_vKOnzWuMwucDcePF45VhMOpDKJhMrOApW8M-xRh7FU4Ivclf0/exec?type=send";
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", url + "&cellphone=" + cellphone + "&msg=" + message, false); // false for synchronous request
+            xmlHttp.send( null );
+            console.log(xmlHttp.responseText);
+        }
+    </script>
 </html>
