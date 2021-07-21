@@ -10,12 +10,13 @@
             <form action="https://notify-bot.line.me/oauth/authorize">
                 <input type="text" name="response_type" value="code" hidden/>
                 <input type="text" name="client_id" value="nQTAPEeeT6MPcZA15ghfV3" hidden/>
-                <input type="text" name="redirect_uri" value="https://script.google.com/macros/s/AKfycbzdYblEGSFew9yw7w_vKOnzWuMwucDcePF45VhMOpDKJhMrOApW8M-xRh7FU4Ivclf0/exec" hidden/>
+                <!-- <input type="text" name="redirect_uri" value="https://script.google.com/macros/s/AKfycbzdYblEGSFew9yw7w_vKOnzWuMwucDcePF45VhMOpDKJhMrOApW8M-xRh7FU4Ivclf0/exec" hidden/> -->
+                <input type="text" name="redirect_uri" value="https://thebluewings.github.io/result.html" hidden/>
                 <input type="text" name="scope" value="notify" hidden/>
                 <input type="text" name="state" id="state" hidden/>
                 <input type="text" id="cellphone" name="cellphone"/>
-                <input type="button" id="get_state" value="取得state" onclick="getState()"/>
-                <input type="submit" id="bind" value="進行綁定" hidden/>
+                <!-- <input type="button" id="get_state" value="取得state" onclick="getState()"/> -->
+                <input type="submit" id="bind" value="進行綁定"/>
             </form>
         </center>
     </body>
@@ -32,7 +33,8 @@
             document.getElementById("get_state").hidden = true
         }
         function requestLINEAuthorize() {
-            var state = getState()
+            // var state = getState()
+            var state = document.getElementById("cellphone").value
             var url = "https://notify-bot.line.me/oauth/authorize"
             var form = new FormData()
             form.append("response_type", "code")
