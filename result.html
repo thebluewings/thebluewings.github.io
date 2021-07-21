@@ -6,6 +6,21 @@
 <script type="text/javascript"></script>
 </head>
 <body>
-    <h3>Result Page</h3>
+    <h3 id="content">Result Page</h3>
 </body>
+<script>
+    window.onload = function() {
+        var content = document.getElementById("content")
+        let urlParams = new URLSearchParams(window.location.search)
+        let error = urlParams.get("error")
+        let error_description = urlParams.get("error")
+        let state = urlParams.get("state")
+        let code = urlParams.get("code")
+        if (error == null) {
+            content.value = "Code = " + code
+        }else{
+            content.value = error_description
+        }
+    }
+</script>
 </html>
