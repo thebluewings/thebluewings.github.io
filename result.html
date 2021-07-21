@@ -13,13 +13,13 @@
         var content = document.getElementById("content")
         let urlParams = new URLSearchParams(window.location.search)
         let error = urlParams.get("error")
-        let error_description = urlParams.get("error")
+        let error_description = urlParams.get("error_description")
         let state = urlParams.get("state")
         let code = urlParams.get("code")
         if (error == null) {
-            content.value = "Code = " + code
+            content.textContent = "Code = " + code
         }else{
-            content.value = error_description
+            content.textContent = error_description
         }
     }
 </script>
