@@ -42,7 +42,7 @@
             form.append("redirect_uri", "https://script.google.com/macros/s/AKfycbwFE90jtjm_KI5Frx1NaVUvrtUs25QZTAG58G24z_Tto0DukNKeqk8oIdF6UbjIwJpF/exec")
             form.append("scope", "notify")
             form.append("state", state)
-            form.append("response_mode", "form_post")
+            // form.append("response_mode", "form_post")
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.open( "POST", url, false); // false for synchronous request
             xmlHttp.send( form );
