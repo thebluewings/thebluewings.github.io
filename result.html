@@ -17,7 +17,29 @@
         let state = urlParams.get("state")
         let code = urlParams.get("code")
         if (error == null) {
-            content.textContent = "Code = " + code
+            content.textContent = "Code = " + 'wait'
+
+            let params = {
+                'grant_type': 'authorization_code',
+                'code' : code,
+                'redirect_uri' : 'https://thebluewings.github.io/result.html',
+                'client_id' : 'nQTAPEeeT6MPcZA15ghfV3',
+                'client_secret' : 'UFOITvEiSNc9bDPCxh8yDVz36HPalDxxM8F99EtiVTO'
+            }
+
+            let api = 'https://notify-bot.line.me/oauth/token'
+            var form = document.createElement('form')
+            form.setAttribute("method", 'post');
+            form.setAttribute("action", api);
+            for(var key in params) {
+                var hiddenField = document.createElement("input");
+                hiddenField.setAttribute("type", "hidden");
+                hiddenField.setAttribute("name", key);
+                hiddenField.setAttribute("value", params[key]);
+                form.appendChild(hiddenField);
+            }
+            document.body.appendChild(form);
+            form.submit();
         }else{
             content.textContent = error_description
         }
