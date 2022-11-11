@@ -6,11 +6,12 @@
 </head>
 <body>
 </body>
-<script src="https://static.line-scdn.net/liff/edge/2/sdk.js">
-    
-</script>
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<script src="./liff-init.js"></script>
+
 <script>
     window.onload = function () {
+        console.log(liff.isInClient());
         location.href = "https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=&redirect_uri=&scope=notify&state=";
     }
 
