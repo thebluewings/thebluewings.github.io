@@ -23,7 +23,10 @@
             text = text + "isLoggedIn: " + liff.isLoggedIn() + "\n";
             text = text + "accessToken: " + liff.getAccessToken() + "\n";
             text = text + "idToken: " + liff.getIDToken() + "\n";
-            text = text + "profile: " + liff.getProfile();
+            const profile = liff.getProfile();
+            text = text + "userId: " + profile.userId + "\n";
+            text = text + "userId: " + profile['userId'] + "\n";
+            text = text + "userId: " + profile.getUserID() + "\n";
             console.log(text);
             node.innerText = text;
             document.body.appendChild(node);
