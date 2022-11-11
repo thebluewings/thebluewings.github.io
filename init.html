@@ -11,7 +11,7 @@
 
 <script>
     window.onload = function () {
-        if (liff.isInClient()) {
+        // if (liff.isInClient()) {
             const node = document.createElement('label');
             var text = "";
             text = text + "OS: " + liff.getOS() + "\n";
@@ -28,8 +28,8 @@
             node.innerText = text;
             document.body.appendChild(node);
             
-            location.href = "https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=&redirect_uri=&scope=notify&state=";
-        }
+            // location.href = "https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=&redirect_uri=&scope=notify&state=";
+        // }
     }
 
 </script>
