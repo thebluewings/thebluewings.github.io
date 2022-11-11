@@ -36,8 +36,32 @@
             text = text + "accessToken: " + liff.getAccessToken() + "\n";
             text = text + "idToken: " + liff.getIDToken() + "\n";
             const profile = liff.getProfile();
-            text = text + "userId: " + profile.userId + "\n";
-            text = text + "userId: " + profile['userId'] + "\n";
+            text = text + "userId: ";
+            try {
+                text = text + profile.userId + "\n";
+            } catch (error) {
+                text = text + "error" + "\n";
+            }
+
+            text = text + "profile['userId']: ";
+            try {
+                text = text + profile['userId'] + "\n";
+            } catch (error) {
+                text = text + "error" + "\n";
+            }
+            text = text + "getUserID(): ";
+            try {
+                text = text + profile.getUserID() + "\n";
+            } catch (error) {
+                text = text + "error" + "\n";
+            }
+            text = text + "getUserId(): ";
+            try {
+                text = text + profile.getUserId() + "\n";
+            } catch (error) {
+                text = text + "error" + "\n";
+            }
+            
             console.log(text);
             node.innerText = text;
             document.body.appendChild(testLabel);
