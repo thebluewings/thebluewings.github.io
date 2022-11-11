@@ -5,12 +5,36 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     </head>
     <body>
+
         <center>
             <h1>歡啟來到SimplEat LINE Notify綁定測試網頁</h1>
-            <form action="cellphone.html">
+            <label id="text1"></label>
+            <form action="init.html">
                 <input type="submit" style="width: 200px;height: 50px; align-self: center;" value="開始綁定"/>
             </form>
             
         </center>
+    <script>
+        window.onload = function() {
+            const node = document.getElementById('text1');
+            var text = "";
+            text = text + "OS: " + liff.getOS() + "\n";
+            text = text + "Language: " + liff.getLanguage() + "\n";
+            text = text + "Version: " + liff.getVersion() + "\n";
+            text = text + "LineVersion: " + liff.getLineVersion() + "\n";
+            text = text + "Context: " + liff.getContext() + "\n";
+            text = text + "isInClient: " + liff.isInClient() + "\n";
+            text = text + "isLoggedIn: " + liff.isLoggedIn() + "\n";
+            text = text + "accessToken: " + liff.getAccessToken() + "\n";
+            text = text + "idToken: " + liff.getIDToken() + "\n";
+            const profile = liff.getProfile();
+            text = text + "userId: " + profile.userId + "\n";
+            text = text + "userId: " + profile['userId'] + "\n";
+            text = text + "userId: " + profile.getUserID() + "\n";
+            console.log(text);
+            node.innerText = text;
+            document.body.appendChild(node);
+        }
+    </script>
     </body>
 </html>

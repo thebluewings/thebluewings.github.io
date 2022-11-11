@@ -11,29 +11,10 @@
 
 <script>
     window.onload = function () {
-        
-            const node = document.createElement('label');
-            var text = "";
-            text = text + "OS: " + liff.getOS() + "\n";
-            text = text + "Language: " + liff.getLanguage() + "\n";
-            text = text + "Version: " + liff.getVersion() + "\n";
-            text = text + "LineVersion: " + liff.getLineVersion() + "\n";
-            text = text + "Context: " + liff.getContext() + "\n";
-            text = text + "isInClient: " + liff.isInClient() + "\n";
-            text = text + "isLoggedIn: " + liff.isLoggedIn() + "\n";
-            text = text + "accessToken: " + liff.getAccessToken() + "\n";
-            text = text + "idToken: " + liff.getIDToken() + "\n";
-            const profile = liff.getProfile();
-            text = text + "userId: " + profile.userId + "\n";
-            text = text + "userId: " + profile['userId'] + "\n";
-            text = text + "userId: " + profile.getUserID() + "\n";
-            console.log(text);
-            node.innerText = text;
-            document.body.appendChild(node);
         if (liff.isInClient()) {
             const profile = liff.getProfile();
             const uid = profile.userId;
-            // location.href = "https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=nQTAPEeeT6MPcZA15ghfV3&redirect_uri=https://linebot.xyz412.synology.me:1443/notify/callback&scope=notify&state="+uid;
+            location.href = "https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=nQTAPEeeT6MPcZA15ghfV3&redirect_uri=https://linebot.xyz412.synology.me:1443/notify/callback&scope=notify&state="+uid;
         }
     }
 
