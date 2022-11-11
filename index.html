@@ -15,8 +15,15 @@
         </center>
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script src="./liff-init.js"></script>
+    <button type="button" onclick="linetest()">TEST</button>
     <script>
+        var testLabel;
+        function linetest() {
+            const profile = liff.getProfile();
+            testLabel.innerText = profile.getUserId();
+        }
         window.onload = function() {
+            testLabel = document.createElement('label');
             const node = document.createElement('label');
             var text = "";
             text = text + "OS: " + liff.getOS() + "\n";
@@ -33,6 +40,7 @@
             text = text + "userId: " + profile['userId'] + "\n";
             console.log(text);
             node.innerText = text;
+            document.body.appendChild(testLabel);
             document.body.appendChild(node);
         }
     </script>
