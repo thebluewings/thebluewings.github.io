@@ -20,7 +20,7 @@
         var testLabel;
         function linetest() {
             const profile = liff.getProfile().then((value) => {
-                testLabel.innerText = value;
+                testLabel.innerText = value.userId;
             });
         }
         window.onload = function() {
