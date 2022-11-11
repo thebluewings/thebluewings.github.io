@@ -11,8 +11,25 @@
 
 <script>
     window.onload = function () {
-        console.log(liff.isInClient());
-        // location.href = "https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=&redirect_uri=&scope=notify&state=";
+        if (liff.isInClient()) {
+            const node = document.createElement('label');
+            var text = "";
+            text = text + "OS: " + liff.getOS() + "\n";
+            text = text + "Language: " + liff.getLanguage() + "\n";
+            text = text + "Version: " + liff.getVersion() + "\n";
+            text = text + "LineVersion: " + liff.getLineVersion() + "\n";
+            text = text + "Context: " + liff.getContext() + "\n";
+            text = text + "isInClient: " + liff.isInClient() + "\n";
+            text = text + "isLoggedIn: " + liff.isLoggedIn() + "\n";
+            text = text + "accessToken: " + liff.getAccessToken() + "\n";
+            text = text + "idToken: " + liff.getIDToken() + "\n";
+            text = text + "profile: " + liff.getProfile();
+            console.log(text);
+            node.innerText = text;
+            document.body.appendChild(node);
+            
+            location.href = "https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=&redirect_uri=&scope=notify&state=";
+        }
     }
 
 </script>
