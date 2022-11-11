@@ -19,8 +19,9 @@
     <script>
         var testLabel;
         function linetest() {
-            const profile = liff.getProfile();
-            testLabel.innerText = profile.getUserId();
+            const profile = liff.getProfile().then((value) => {
+                testLabel.innerText = value;
+            });
         }
         window.onload = function() {
             testLabel = document.createElement('label');
