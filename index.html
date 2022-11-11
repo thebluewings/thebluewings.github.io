@@ -8,7 +8,6 @@
 
         <center>
             <h1>歡啟來到SimplEat LINE Notify綁定測試網頁</h1>
-            <label id="text1"></label>
             <form action="init.html">
                 <input type="submit" style="width: 200px;height: 50px; align-self: center;" value="開始綁定"/>
             </form>
@@ -16,7 +15,7 @@
         </center>
     <script>
         window.onload = function() {
-            const node = document.getElementById('text1');
+            const node = document.createElement('label');
             var text = "";
             text = text + "OS: " + liff.getOS() + "\n";
             text = text + "Language: " + liff.getLanguage() + "\n";
