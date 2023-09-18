@@ -8,7 +8,12 @@
 
         <center>
             <h1>歡啟來到SimplEat LINE Notify綁定測試網頁</h1>
-            <form action="init.html">
+            <form action="https://notify-bot.line.me/oauth/authorize">
+                <input type="text" hidden id="response_type" value="code">
+                <input type="text" hidden id="client_id" value="nQTAPEeeT6MPcZA15ghfV3">
+                <input type="text" hidden id="redirect_uri" value="https://thebluewings.github.io/result.html">
+                <input type="text" hidden id="scope" value="notify">
+                <input type="text" hidden id="state" value="123123123">
                 <input type="submit" style="width: 200px;height: 50px; align-self: center;" value="開始綁定"/>
             </form>
             
