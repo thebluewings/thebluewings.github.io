@@ -79321,7 +79321,7 @@ A.yf.prototype={
 ak(){return new A.Ju(B.j)}}
 A.K4.prototype={
 M(a){var s=null
-return new A.yy(B.MK,A.aD(["messageView",new A.a6T()],t.N,t.Ab),"/",A.avr(s,new A.wD(B.a4,B.rN,B.k,s,s,B.Bm,B.l,s,s,s,s,s,s,B.Cd,B.k,s,s,B.eC,B.eC,B.k,B.l,s,s,s,s,s,s,s,s,s,s),B.eC,s),s)}}
+return new A.yy(B.MK,A.aD(["/messageView",new A.a6T()],t.N,t.Ab),"/",A.avr(s,new A.wD(B.a4,B.rN,B.k,s,s,B.Bm,B.l,s,s,s,s,s,s,B.Cd,B.k,s,s,B.eC,B.eC,B.k,B.l,s,s,s,s,s,s,s,s,s,s),B.eC,s),s)}}
 A.a6T.prototype={
 $1(a){return B.MD},
 $S:468}
@@ -79353,7 +79353,7 @@ $0(){return this.a.tt().bt(new A.a5X(this.b),t.Cv)},
 $S:0}
 A.a5X.prototype={
 $1(a){var s=A.aH(t.ZB)
-if(a!=null)s.E(0,A.cf([A.apq(this.a).Tv("messageView",a,t.X)],t.Rs))
+if(a!=null)s.E(0,A.cf([A.apq(this.a).Tv("/messageView",a,t.X)],t.Rs))
 return s},
 $S:469}
 A.Lg.prototype={
